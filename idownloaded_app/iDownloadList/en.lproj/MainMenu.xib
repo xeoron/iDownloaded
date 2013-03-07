@@ -1203,8 +1203,8 @@
 								</object>
 								<object class="NSMenuItem" id="102151532">
 									<reference key="NSMenu" ref="466310130"/>
-									<string key="NSTitle">Display/Refresh File History</string>
-									<string key="NSKeyEquiv">D</string>
+									<string key="NSTitle">Refresh File History</string>
+									<string key="NSKeyEquiv">R</string>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
@@ -1360,7 +1360,7 @@
 							<object class="NSButtonCell" key="NSCell" id="840276994">
 								<int key="NSCellFlags">67108864</int>
 								<int key="NSCellFlags2">134217728</int>
-								<string key="NSContents">Display List</string>
+								<string key="NSContents">Refresh List</string>
 								<reference key="NSSupport" ref="773244458"/>
 								<string key="NSCellIdentifier">_NS:9</string>
 								<reference key="NSControlView" ref="322119295"/>
@@ -1509,9 +1509,7 @@
 													<integer value="5"/>
 													<object class="NSURL">
 														<nil key="NS.base"/>
-														<object class="NSMutableString" key="NS.relative">
-															<characters key="NS.bytes">file://localhost/Applications/Xcode.app/Contents/SharedFrameworks/DVTKit.framework/Resources/DVTIbeamCursor.tiff</characters>
-														</object>
+														<string key="NS.relative">file://localhost/Applications/Xcode.app/Contents/SharedFrameworks/DVTKit.framework/Resources/DVTIbeamCursor.tiff</string>
 													</object>
 												</array>
 											</array>
