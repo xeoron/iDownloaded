@@ -32,6 +32,7 @@
 		A19978F716E7A8AC0080E7A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		A19978F916E7A8AC0080E7A8 /* AppDelegate.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = AppDelegate.applescript; sourceTree = "<group>"; };
 		A19978FC16E7A8AD0080E7A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		A1D80C3516E913E800A654A0 /* iDownloaded.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iDownloaded.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +51,7 @@
 		A19978D916E7A8AC0080E7A8 = {
 			isa = PBXGroup;
 			children = (
+				A1D80C3516E913E800A654A0 /* iDownloaded.entitlements */,
 				A159F3EE16E7FB0300D85322 /* White Download.icns */,
 				A19978ED16E7A8AC0080E7A8 /* iDownloadList */,
 				A19978E416E7A8AC0080E7A8 /* Frameworks */,
@@ -268,6 +270,7 @@
 		A199790116E7A8AD0080E7A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = iDownloaded.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iDownloadList/iDownloadList-Prefix.pch";
@@ -280,6 +283,7 @@
 		A199790216E7A8AD0080E7A8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = iDownloaded.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iDownloadList/iDownloadList-Prefix.pch";
