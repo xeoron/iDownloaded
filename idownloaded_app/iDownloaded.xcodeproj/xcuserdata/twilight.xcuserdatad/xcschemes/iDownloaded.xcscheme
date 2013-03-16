@@ -17,7 +17,7 @@
                BlueprintIdentifier = "A19978E116E7A8AC0080E7A8"
                BuildableName = "iDownloaded.app"
                BlueprintName = "iDownloaded"
-               ReferencedContainer = "container:iDownloadList.xcodeproj">
+               ReferencedContainer = "container:iDownloaded.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
             BlueprintIdentifier = "A19978E116E7A8AC0080E7A8"
             BuildableName = "iDownloaded.app"
             BlueprintName = "iDownloaded"
-            ReferencedContainer = "container:iDownloadList.xcodeproj">
+            ReferencedContainer = "container:iDownloaded.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -54,7 +54,7 @@
             BlueprintIdentifier = "A19978E116E7A8AC0080E7A8"
             BuildableName = "iDownloaded.app"
             BlueprintName = "iDownloaded"
-            ReferencedContainer = "container:iDownloadList.xcodeproj">
+            ReferencedContainer = "container:iDownloaded.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -72,7 +72,7 @@
             BlueprintIdentifier = "A19978E116E7A8AC0080E7A8"
             BuildableName = "iDownloaded.app"
             BlueprintName = "iDownloaded"
-            ReferencedContainer = "container:iDownloadList.xcodeproj">
+            ReferencedContainer = "container:iDownloaded.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

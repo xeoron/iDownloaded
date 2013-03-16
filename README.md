@@ -9,12 +9,19 @@ Why Use iDownloaded
 	1.	Find where you got a file online that you deleted by mistake.
 	2.	Take control of your privacy, so you can view and delete this list of filenames as needed.
 	
+Note: Exceptions
+=====
+Programs that overt being added to the listing 
+
+	Terminal programs, such as, wget and curl
+	Bittorrent programs, such as, BitTorrent and µTorrent
+
 Requirements:
 =====
 iDownloaded (GUI version)
 
-    Mac OSX.7 or higher
+    Mac OSX.6 Snow Leopard or higher
     
-iDownloaded.sh (commandline version)
+iDownloaded.sh (command-line version)
 
-	Mac OSX.5 or higher
+	Mac OSX.5 Leopard or higher

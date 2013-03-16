@@ -25,10 +25,10 @@
 		A19978EA16E7A8AC0080E7A8 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		A19978EB16E7A8AC0080E7A8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A19978EC16E7A8AC0080E7A8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		A19978EF16E7A8AC0080E7A8 /* iDownloadList-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iDownloadList-Info.plist"; sourceTree = "<group>"; };
+		A19978EF16E7A8AC0080E7A8 /* iDownloaded-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iDownloaded-Info.plist"; sourceTree = "<group>"; };
 		A19978F116E7A8AC0080E7A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A19978F316E7A8AC0080E7A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A19978F516E7A8AC0080E7A8 /* iDownloadList-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iDownloadList-Prefix.pch"; sourceTree = "<group>"; };
+		A19978F516E7A8AC0080E7A8 /* iDownloaded-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iDownloaded-Prefix.pch"; sourceTree = "<group>"; };
 		A19978F716E7A8AC0080E7A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		A19978F916E7A8AC0080E7A8 /* AppDelegate.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = AppDelegate.applescript; sourceTree = "<group>"; };
 		A19978FC16E7A8AD0080E7A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 			children = (
 				A1D80C3516E913E800A654A0 /* iDownloaded.entitlements */,
 				A159F3EE16E7FB0300D85322 /* White Download.icns */,
-				A19978ED16E7A8AC0080E7A8 /* iDownloadList */,
+				A19978ED16E7A8AC0080E7A8 /* iDownloaded */,
 				A19978E416E7A8AC0080E7A8 /* Frameworks */,
 				A19978E316E7A8AC0080E7A8 /* Products */,
 			);
@@ -88,23 +88,23 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		A19978ED16E7A8AC0080E7A8 /* iDownloadList */ = {
+		A19978ED16E7A8AC0080E7A8 /* iDownloaded */ = {
 			isa = PBXGroup;
 			children = (
 				A19978F916E7A8AC0080E7A8 /* AppDelegate.applescript */,
 				A19978FB16E7A8AD0080E7A8 /* MainMenu.xib */,
 				A19978EE16E7A8AC0080E7A8 /* Supporting Files */,
 			);
-			path = iDownloadList;
+			path = iDownloaded;
 			sourceTree = "<group>";
 		};
 		A19978EE16E7A8AC0080E7A8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A19978EF16E7A8AC0080E7A8 /* iDownloadList-Info.plist */,
+				A19978EF16E7A8AC0080E7A8 /* iDownloaded-Info.plist */,
 				A19978F016E7A8AC0080E7A8 /* InfoPlist.strings */,
 				A19978F316E7A8AC0080E7A8 /* main.m */,
-				A19978F516E7A8AC0080E7A8 /* iDownloadList-Prefix.pch */,
+				A19978F516E7A8AC0080E7A8 /* iDownloaded-Prefix.pch */,
 				A19978F616E7A8AC0080E7A8 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
@@ -126,7 +126,7 @@
 			dependencies = (
 			);
 			name = iDownloaded;
-			productName = iDownloadList;
+			productName = iDownloaded;
 			productReference = A19978E216E7A8AC0080E7A8 /* iDownloaded.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -139,7 +139,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Jason Campisi";
 			};
-			buildConfigurationList = A19978DD16E7A8AC0080E7A8 /* Build configuration list for PBXProject "iDownloadList" */;
+			buildConfigurationList = A19978DD16E7A8AC0080E7A8 /* Build configuration list for PBXProject "iDownloaded" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -273,8 +273,9 @@
 				CODE_SIGN_ENTITLEMENTS = iDownloaded.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iDownloadList/iDownloadList-Prefix.pch";
-				INFOPLIST_FILE = "iDownloadList/iDownloadList-Info.plist";
+				GCC_PREFIX_HEADER = "iDownloaded/iDownloaded-Prefix.pch";
+				INFOPLIST_FILE = "iDownloaded/iDownloaded-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -286,8 +287,9 @@
 				CODE_SIGN_ENTITLEMENTS = iDownloaded.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iDownloadList/iDownloadList-Prefix.pch";
-				INFOPLIST_FILE = "iDownloadList/iDownloadList-Info.plist";
+				GCC_PREFIX_HEADER = "iDownloaded/iDownloaded-Prefix.pch";
+				INFOPLIST_FILE = "iDownloaded/iDownloaded-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -296,7 +298,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A19978DD16E7A8AC0080E7A8 /* Build configuration list for PBXProject "iDownloadList" */ = {
+		A19978DD16E7A8AC0080E7A8 /* Build configuration list for PBXProject "iDownloaded" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A19978FE16E7A8AD0080E7A8 /* Debug */,
