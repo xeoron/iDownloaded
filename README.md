@@ -14,7 +14,7 @@ Note: Exceptions
 Programs that overt being added to the listing 
 
 	Terminal programs, such as, wget and curl
-	Bittorrent programs, such as, BitTorrent and µTorrent
+	System software, such as, AppStore and µTorrent
 
 Requirements:
 =====
