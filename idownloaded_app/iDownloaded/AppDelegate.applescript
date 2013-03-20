@@ -1,10 +1,10 @@
 (*
-  AppDelegate.applescript
+ AppDelegate.applescript
  iDownloaded
-
+ 
  Created by Jason Campisi on 3/6/13.
  Copyright (c) 2013 ACK Geek. All rights reserved.
-*)
+ *)
  
 script AppDelegate
 	property parent : class "NSObject"
@@ -12,20 +12,10 @@ script AppDelegate
     property labelCount : missing value
     property labelText : "File History"
     property cmdGetList : "sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent'"
+    property cmdGetListSorted : "sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent' | sort -g"
     property cmdGetListCount : "sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent' | wc -l | cut -c 7-100000000"
     property cmdDeleteList : "sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
     
-    on printList_(sender)
-        (*
-         --print
-         tell application "TextEdit"
-         activate
-         print document 1 with properties ¬
-         {target printer:"Office Printer", pages across:2, pages down:2} ¬ with print dialog
-         end tell
-         *)
-        return
-    end printList_
     
     on saveList_(sender)
         (*
@@ -34,6 +24,7 @@ script AppDelegate
          tell application "TextEdit"
          save document 1 in new_file end tell
          *)
+        display alert "saving not setup yet" -- with title "Alert: Saving!" -- with title failes in CoCoa Applescript
         return
     end saveList_
     
@@ -44,11 +35,11 @@ script AppDelegate
             set myCount to (do shell script cmdGetListCount) as number
             if myCount is 0 then
                 labelCountReset_()
-            else
+                else
                 labelCount's setStringValue_(labelText & " (" & myCount & ")")
             end if
-        on error StrError
-            display alert "Error:\n" & StrError
+            on error StrError
+            display alert "Error: not able to count the list!\n"
         end try
     end labelCountUpdate_
     
@@ -57,33 +48,56 @@ script AppDelegate
         try
             labelCount's setStringValue_(labelText)
             on error StrError
-            display alert "Error:\n" & StrError
+            display alert "Error: not able to count the list!\n"
         end try
     end labelCountReset_
     
     on listButtonClicked_(sender)
-        -- display downloaded filename\location list
+        (*) display downloaded filename\location list
+         https://discussions.apple.com/thread/4195893?start=0&tstart=0
+         *)
         try
+            (*
             textField's setString_(do shell script cmdGetList)
             set x to textField's textStorage(sender)
             log x -- this will log the text from the text view
+            *)
+            textField's setString_(do shell script cmdGetList)
             labelCountUpdate_()
-        on error StrError
-            display alert "Error:\n" & StrError
+            on error StrError
+            display alert "Error: Unable to find useraccounts ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV file\n" & StrError
         end try
     end listButtonClicked_
-
+    
+    
+    on listSortedButtonClicked_(sender)
+        (*) display downloaded filename\location list as a numerically sorted list
+         *)
+        try
+            (*
+             textField's setString_(do shell script cmdGetList)
+             set x to textField's textStorage(sender)
+             log x -- this will log the text from the text view
+             *)
+            textField's setString_(do shell script cmdGetListSorted)
+            labelCountUpdate_()
+            on error StrError
+            display alert "Error: Unable to find useraccounts ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV file\n" & StrError
+        end try
+    end listSortedButtonClicked_
+   
     on clearDisplay_(sender)
         (* remove all data feedback being displayed
-              -count list
-              -file listed in the text box
-        *)
+         -count list
+         -file listed in the text box
+         *)
+
         try
             textField's setString_("")
             set x to textField's textStorage(sender)
             log x -- this will log the text from the text view
             labelCountReset_()
-        on error StrError
+            on error StrError
             display alert "Error:\n" & StrError
         end try
     end clearDisplay_
@@ -95,18 +109,19 @@ script AppDelegate
             set x to textField's textStorage(sender)
             log x -- this will log the text from the text view
             labelCountUpdate_()
-        on error StrError
-            display alert "Error:\n" & StrError
+            on error StrError
+            display alert "Error: Unable to find useraccounts ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* file\n" & StrError
         end try
     end rmButtonClicked_
     
 	on applicationWillFinishLaunching_(aNotification)
         -- Insert code here to initialize your application before any files are opened
         listButtonClicked_(aNotification)
+        --filenameGrabExample_("foo")
 	end applicationWillFinishLaunching_
 	
 	on applicationShouldTerminate_(sender)
-		-- Insert code here to do any housekeeping before your application quits 
+		-- Insert code here to do any housekeeping before your application quits
 		return current application's NSTerminateNow
 	end applicationShouldTerminate_
 	
