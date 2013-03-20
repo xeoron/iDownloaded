@@ -22,7 +22,7 @@ do
     	sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent'
         ;;
     -ls|--list-sort)
-	echo "Downloaded sorted file list:"
+	echo "Numerically sorted downloaded file list:"
         sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent' | sort -g
         ;; 
     -d|--delete)
