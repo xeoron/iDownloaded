@@ -11,7 +11,7 @@ do
     -h|--help)
         echo "Usage: idownloaded.sh <options>"
         echo "-l --list the files that have been downloaded"
-	echo "-lr --list-sort lists the files that have been downloaded in a general-numeric sorted order"
+        echo "-ls --list-sort display's the downloaded file history in a numerically sorted list"
         echo "-d --delete the download file list"
         echo "-v --version"
         echo "-h --help"
@@ -21,7 +21,7 @@ do
         echo "Downloaded file list:"
     	sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent'
         ;;
-    -lr|--list-sort)
+    -ls|--list-sort)
 	echo "Downloaded sorted file list:"
         sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent' | sort -g
         ;; 

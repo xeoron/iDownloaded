@@ -20,5 +20,6 @@ Options:
     -h --help           Help
     -v --version        Current program version and requirements
     -l --list           List the history of downloaded files
+    -ls --list-sort     Display the downloaded file history in a numerically sorted list
     -d --delete         Delete repository of downloaded files
 
