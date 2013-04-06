@@ -11,9 +11,9 @@ script AppDelegate
 	property textField : missing value
     property labelCount : missing value
     property labelText : "File History"
-    property cmdGetList : "sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent'"
-    property cmdGetListSorted : "sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent' | sort -g"
-    property cmdGetListCount : "sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent' | wc -l | cut -c 7-100000000"
+    property cmdGetList : "sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent' | grep -v '^$'"
+    property cmdGetListSorted : "sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent' | grep -v '^$' | sort -g"
+    property cmdGetListCount : "sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent' | grep -v '^$' | wc -l | cut -c 7-100000000"
     property cmdDeleteList : "sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
     
     
@@ -30,7 +30,6 @@ script AppDelegate
     
     on labelCountUpdate_()
         -- count & display the number of files in the download list
-        set isZero to "9"
         try
             set myCount to (do shell script cmdGetListCount) as number
             if myCount is 0 then
