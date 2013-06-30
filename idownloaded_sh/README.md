@@ -4,11 +4,6 @@ OS X keeps a record of every filename downloaded and source location (webpages n
 
 If you are worried about your privacy, then use this script manually or add it to a cron job so it will be purged regularly.
 
-
-Requirements:
-=====
-    Mac OSX.5 or higher
-    
 Usage: 
 =====
 Format
@@ -23,3 +18,13 @@ Options:
     -ls --list-sort     Display the downloaded file history in a numerically sorted list
     -d --delete         Delete repository of downloaded files
 
+
+Install:
+=====
+Automated command:
+
+    sudo ./install_idownloaded.sh
+
+Requirements:
+=====
+    Mac OSX.5 or higher
