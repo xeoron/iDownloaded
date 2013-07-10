@@ -2,7 +2,7 @@ iDownloaded
 ===========
 <img src="https://raw.github.com/xeoron/idownloaded/master/images/idownloaded_screenshot.png"/>
 
-OS X keeps a record of every filename downloaded and source location (webpages not included) for Safari, Google Chrome, and perhaps other programs that use Webkit. This list is kept outside of your web browser of choice. Deleting your browsing or download history does not purge the system database of this information. 
+OS X keeps a record of every filename downloaded and source location (webpages not included) for Safari, Google Chrome, and perhaps other programs that use Webkit/Blink. This list is kept outside of your web browser of choice. Deleting your browsing or download history does not purge the system database of this information. 
 
 Why Use iDownloaded
 ===================
