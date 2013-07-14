@@ -16,7 +16,7 @@ Options:
     -v --version        Current program version and requirements
     -l --list           List the history of downloaded files
     -ls --list-sort     Display the downloaded file history in a numerically sorted list
-    -f --file-count displays the total sum value of the listed files
+    -f --file-count     displays the total sum value of the listed files
     -d --delete         Delete repository of downloaded files
 
 
