@@ -3,37 +3,45 @@
 # Author: Jason Campisi
 # Date: 3/3/2013
 # License: GPL 2 or higher
-# Version: 0.1
+VERSION="0.2"
 
-for arg in "$@"
-do
-	case $arg in
+ function listCount {
+   echo "$(sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent' | awk 'NF'| wc -l | sed 's/ //g')"
+ }
+
+option=$1  #argument
+
+ if [ -z "$option" ]; then #if option is not set
+    option="-h"
+ fi
+
+  case $option in
     -h|--help)
-        echo "Usage: idownloaded.sh <options>"
-        echo "-l --list the files that have been downloaded"
-        echo "-ls --list-sort display's the downloaded file history in a numerically sorted list"
-        echo "-d --delete the download file list"
-        echo "-v --version"
-        echo "-h --help"
-        exit 0
+        echo "Usage: idownloaded.sh <option>"
+        echo "   -l --list the files that have been downloaded"
+        echo "   -ls --list-sort display's the downloaded file history in a numerically sorted list"
+        echo "   -d --delete the download file list"
+        echo "   -v --version"
+        echo "   -h --help"
         ;;
     -l|--list)
         echo "Downloaded file list:"
-    	sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent'
+    	sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent' | awk 'NF'
+        echo "Total number of files: $(listCount)" 
         ;;
     -ls|--list-sort)
-	echo "Numerically sorted downloaded file list:"
-        sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent' | sort -g
+        echo "Numerically sorted downloaded file list:"
+        sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent' | awk 'NF' | sort -g
+        echo "Total number of files: $(listCount)" 
         ;; 
     -d|--delete)
         echo "Deleting system list of downloaded files..."
     	sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'
         ;;
     -v|--version)
-        echo "iDownloaded.sh\nVersion: 0.1"
-        echo "System requirements: Mac OSX.5 Leopard or higher"
+        echo " iDownloaded.sh v$VERSION"
+        echo " System requirements: Mac OSX.5 Leopard or higher"
     	;;
-    esac
-done
+  esac
 exit 0
 
