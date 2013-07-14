@@ -8,7 +8,7 @@ Usage:
 =====
 Format
 
-    idownloaded.sh <options>
+    idownloaded.sh <option>
 
 Options:
 =====
