@@ -3,7 +3,8 @@
 # Author: Jason Campisi
 # Date: 3/3/2013
 # License: GPL 2 or higher
-VERSION="0.2"
+VERSION="0.3"
+
 
  function listCount {
    echo "$(sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent' | awk 'NF'| wc -l | sed 's/ //g')"
@@ -21,17 +22,19 @@ option=$1  #argument
         echo "   -l --list the files that have been downloaded"
         echo "   -ls --list-sort display's the downloaded file history in a numerically sorted list"
         echo "   -d --delete the download file list"
+        echo "   -f --file-count displays the total sum value of the listed files"
         echo "   -v --version"
         echo "   -h --help"
         ;;
     -l|--list)
         echo "Downloaded file list:"
     	sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent' | awk 'NF'
-        echo "Total number of files: $(listCount)" 
         ;;
     -ls|--list-sort)
         echo "Numerically sorted downloaded file list:"
         sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent' | awk 'NF' | sort -g
+        ;; 
+    -f|--file-count)
         echo "Total number of files: $(listCount)" 
         ;; 
     -d|--delete)
