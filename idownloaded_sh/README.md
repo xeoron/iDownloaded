@@ -4,6 +4,8 @@ OS X keeps a record of every filename downloaded and source location (webpages n
 
 If you are worried about your privacy, then use this script manually or add it to a cron job so it will be purged regularly.
 
+Note: this is no longer supported on MacOS 14 or higher
+
 Usage: 
 =====
 Format
