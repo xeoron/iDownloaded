@@ -1,4 +1,4 @@
-iDownloaded
+iDownloaded: is no longer supported as of macOS 14 or higher
 ===========
 <img src="https://raw.github.com/xeoron/idownloaded/master/images/idownloaded_screenshot.png"/>
 
